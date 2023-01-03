@@ -1,4 +1,4 @@
-package hello.login.web.member;
+package hello.login.domain.member;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
@@ -21,7 +21,7 @@ public class MemberRepository {
         return store.get(id);
     }
     public Optional<Member> findByLoginId(String loginId){
-        findAll().stream().filter(m -> m.getLoginId().equals(loginId)).findAny();
+        return findAll().stream().filter(m -> m.getLoginId().equals(loginId)).findFirst();
     }
     public List<Member> findAll(){
         return new ArrayList<>(store.values());
