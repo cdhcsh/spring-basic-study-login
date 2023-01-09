@@ -82,6 +82,7 @@ public class LoginController {
         session.setAttribute(SessionConst.LOGIN_MEMBER,loginMember);
         return "redirect:/";
     }
+
     @PostMapping("/login")
     public String loginV4(@Validated @ModelAttribute LoginForm form, BindingResult bindingResult,
                           HttpServletRequest request, @RequestParam(defaultValue = "/") String redirectURL){
